@@ -59,4 +59,3 @@ FORMS += \
         mainwindow.ui \
     traceview.ui
 
-CONFIG += staticlib
