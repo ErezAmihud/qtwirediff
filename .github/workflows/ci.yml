@@ -3,6 +3,7 @@ name: Wirediff CI
 on:
   push:
     branches: [ master ]
+    tags: 'v*'
   pull_request:
     branches: [ master ]
   workflow_dispatch:
@@ -84,3 +85,19 @@ jobs:
       with:
         name: Wirediff (macOS)
         path: qtwirediff.app
+  release:
+      needs: [build_ubuntu, build_macos, build_windows]
+      runs-on: ubuntu-latest
+      permissions:
+        contents: write
+      steps:
+      - uses: actions/checkout@v5
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
+        with:
+          draft: true
+          files: |
+            qtwirediff.app
+            release/qtwirediff.exe
+            qtwirediff
