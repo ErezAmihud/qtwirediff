@@ -56,12 +56,27 @@ jobs:
       run: qmake
     - name: Build
       run: nmake
+    - name: Create install directory
+      run: mkdir windows_installer
+    - name: Copy executable
+      run: copy .\release\qtwirediff.exe windows_installer
+    - name: Create distrabution
+      run: windeployqt windows_installer\qtwirediff.exe
+    - name: Create zip
+      run: zip qtwirediff_windows_installer.zip .\windows_installer
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: Wirediff (Windows)
         path: release/qtwirediff.exe
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Wirediff (Windows Installer)
+        path: windows_installer.zip
 
+
+  
   build_macos:
 
     runs-on: macos-latest
