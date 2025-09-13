@@ -58,4 +58,3 @@ HEADERS += \
 FORMS += \
         mainwindow.ui \
     traceview.ui
-
