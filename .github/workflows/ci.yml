@@ -61,7 +61,7 @@ jobs:
     - name: Copy executable
       run: copy .\release\qtwirediff.exe windows_dist
     - name: Create distrabution
-      run: windeployqt windows_installer\qtwirediff.exe
+      run: windeployqt windows_dist\qtwirediff.exe
     - name: Create zip
       run: 7z a qtwirediff_windows_dist.zip .\windows_dist
     - name: Upload artifact
@@ -70,7 +70,7 @@ jobs:
         name: Wirediff (Windows)
         path: |
           release/qtwirediff.exe
-          qtwirediff_windows_installer.zip
+          qtwirediff_windows_dist.zip
 
   
   build_macos:
