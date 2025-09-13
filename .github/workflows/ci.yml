@@ -109,13 +109,12 @@ jobs:
         with:
           path: dist
       - run: tree ./dist
+      - run: mv "./dist/Wirediff (macOS)/Contents/MacOS/qtwirediff" ./dist/qtwirediff.app
       - name: Release
         uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
         with:
           draft: true
           files: |
-            dist/release/qtwirediff.exe
-            dist/qtwirediff.app
-            dist/qtwirediff
-            dist/qtwirediff_windows_dist.zip
+            dist/**/qtwirediff.exe
+            
