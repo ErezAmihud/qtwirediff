@@ -63,7 +63,7 @@ jobs:
     - name: Create distrabution
       run: windeployqt windows_installer\qtwirediff.exe
     - name: Create zip
-      run: 7z qtwirediff_windows_installer.zip .\windows_installer
+      run: 7z a qtwirediff_windows_installer.zip .\windows_installer
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
