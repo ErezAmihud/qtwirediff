@@ -114,4 +114,7 @@ jobs:
         with:
           draft: true
           files: |
-            dist/**/qtwirediff*
+            dist/release/qtwirediff.exe
+            dist/qtwirediff.app
+            dist/qtwirediff
+            dist/qtwirediff_windows_dist.zip
