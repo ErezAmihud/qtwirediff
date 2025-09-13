@@ -57,13 +57,13 @@ jobs:
     - name: Build
       run: nmake
     - name: Create install directory
-      run: mkdir windows_installer
+      run: mkdir windows_dist
     - name: Copy executable
-      run: copy .\release\qtwirediff.exe windows_installer
+      run: copy .\release\qtwirediff.exe windows_dist
     - name: Create distrabution
       run: windeployqt windows_installer\qtwirediff.exe
     - name: Create zip
-      run: 7z a qtwirediff_windows_installer.zip .\windows_installer
+      run: 7z a qtwirediff_windows_dist.zip .\windows_dist
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
@@ -114,4 +114,4 @@ jobs:
         with:
           draft: true
           files: |
-            dist/qtwirediff*
+            dist/**/qtwirediff*
