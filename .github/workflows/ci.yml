@@ -116,5 +116,5 @@ jobs:
         with:
           draft: true
           files: |
-            dist/**/qtwirediff.exe
+            dist/**/qtwirediff*
             
