@@ -103,4 +103,4 @@ jobs:
         with:
           draft: true
           files: |
-            dist/**/*
+            dist/qtwirediff*
