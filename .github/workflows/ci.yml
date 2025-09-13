@@ -68,13 +68,9 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Wirediff (Windows)
-        path: release/qtwirediff.exe
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: Wirediff (Windows Installer)
-        path: windows_installer.zip
-
+        path: |
+          release/qtwirediff.exe
+          qtwirediff_windows_installer.zip
 
   
   build_macos:
